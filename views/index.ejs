@@ -1,0 +1,20 @@
+<form action="/submit" method="post" target="_blank">
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname"><br><br>
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname" name="lname"><br><br>
+    <input type="submit" value="Submit">
+  </form>
+
+<% if(blogContainer.length >0){ %>
+    <ul>
+        <% for(let i=0;i<blogContainer.length;i++){ %>
+            <li>
+                <a href=""><%= blogContainer[i].title %></a>
+            </li>
+            <% } %>
+    </ul>
+    <% }else{ %>
+        <h1>No blogs yet</h1>
+   <% } %>
+    
