@@ -36,6 +36,19 @@ app.post('/delete/:index', (req, res) => {
     blogContainer.splice(index, 1); // Remove the item at the specified index
     res.redirect('/'); // Redirect back to the main page
 });
+app.get('/edit/:index', (req, res) => {
+    const index = req.params.index;
+    const data = blogContainer[index];
+    res.render('edit.ejs', { data, index });
+});
+app.post('/edit/:index', (req, res) => {
+    const index = req.params.index;
+    const { title, para } = req.body;
+    blogContainer[index] = { title, para };
+    res.redirect('/');
+});
+
+
 
 app.listen(port,()=>{
     console.log(`The server is running on port ${port}`)
