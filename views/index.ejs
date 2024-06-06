@@ -1,8 +1,9 @@
-<form action="/submit" method="post" target="_blank">
-    <label for="fname">First name:</label>
-    <input type="text" id="fname" name="fname"><br><br>
-    <label for="lname">Last name:</label>
-    <input type="text" id="lname" name="lname"><br><br>
+<%- include("partials/header.ejs") %>
+
+
+<form action="/submit" method="post">
+    <input type="text" id="fname" name="fname" placeholder="Enter the title here"><br><br>
+    <textarea type="text" id="lname" name="lname" placeholder="Enter the blog here"></textarea><br><br>
     <input type="submit" value="Submit">
   </form>
 
@@ -24,3 +25,5 @@
         <h1>No blogs yet</h1>
    <% } %>
     
+
+<%- include("partials/footer.ejs") %>
