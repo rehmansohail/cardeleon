@@ -21,11 +21,15 @@ app.get("/",(req,res)=>{
 })
 
 app.post("/submit",(req,res)=>{
-    console.log(req.body)
     blogContainer.push(new blog(req.body["fname"],req.body["lname"]))
     res.render("index.ejs",{
         blogContainer
     })
+})
+
+app.get("/blog/:index",(req,res)=>{
+    const data = blogContainer[req.params.index]
+    res.render("blog.ejs",{data})
 })
 
 app.listen(port,()=>{

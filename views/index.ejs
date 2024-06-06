@@ -8,11 +8,11 @@
 
 <% if(blogContainer.length >0){ %>
     <ul>
-        <% for(let i=0;i<blogContainer.length;i++){ %>
+        <% blogContainer.forEach((data,index)=>{%>
             <li>
-                <a href=""><%= blogContainer[i].title %></a>
+                <a href="/blog/<%=index %>" target="_blank"><%= data.title %></a>
             </li>
-            <% } %>
+            <% })  %>
     </ul>
     <% }else{ %>
         <h1>No blogs yet</h1>
