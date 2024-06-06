@@ -5,6 +5,9 @@
 
 body {
   background: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .box {
@@ -43,6 +46,7 @@ input::placeholder {
 .footer {
   background: var(--card-bg);
   color: ghostwhite;
+  margin-top: auto;
 }
 
 .footer p,
@@ -58,3 +62,5 @@ strong {
   color: ghostwhite;
   margin: 10px
 }
+
+

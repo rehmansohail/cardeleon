@@ -2,6 +2,8 @@
 <html lang="en">
 
   <head>
+    
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,7 +13,14 @@
     <script src="https://kit.fontawesome.com/7dc3015a44.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14"></script>
     <link rel="stylesheet" href="stylesheets/cards.css">
-    <style> ::-webkit-scrollbar{height:10px;width:10px}::-webkit-scrollbar-track{background:#efefef;border-radius:6px}::-webkit-scrollbar-thumb{background:#d5d5d5;border-radius:6px}::-webkit-scrollbar-thumb:hover{background:#c4c4c4}</style>
+    <style> 
+    .nav-menu {
+            display: none;
+        }
+        .nav-menu.is-active {
+            display: block;
+        }
+    ::-webkit-scrollbar{height:10px;width:10px}::-webkit-scrollbar-track{background:#efefef;border-radius:6px}::-webkit-scrollbar-thumb{background:#d5d5d5;border-radius:6px}::-webkit-scrollbar-thumb:hover{background:#c4c4c4}</style>
   </head>
 
   <body>
@@ -23,7 +32,7 @@
           <a class="navbar-item" href="#">
             <img src="https://cdn.emk.dev/templates/bulma-logo-light.png" alt="Logo">
           </a>
-          <span class="navbar-burger burger" data-target="navbarMenu">
+          <span class="navbar-burger burger" data-target="navbarMenu" id="nav-toggle">
             <span></span>
             <span></span>
             <span></span>
@@ -54,3 +63,15 @@
       </div>
     </nav>
     <!-- END NAV -->
+    <script type="text/javascript">
+      const el = document.querySelector("#nav-toggle");
+      if (el) {
+          el.addEventListener("click", toggleNav);
+      }
+
+      function toggleNav() {
+          const nav = document.getElementById("navbarMenu");
+          nav.classList.toggle("is-active");
+          console.log(nav.classList);
+      }
+  </script>
