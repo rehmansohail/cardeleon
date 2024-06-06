@@ -31,6 +31,11 @@ app.get("/blog/:index",(req,res)=>{
     const data = blogContainer[req.params.index]
     res.render("blog.ejs",{data})
 })
+app.post('/delete/:index', (req, res) => {
+    const index = req.params.index;
+    blogContainer.splice(index, 1); // Remove the item at the specified index
+    res.redirect('/'); // Redirect back to the main page
+});
 
 app.listen(port,()=>{
     console.log(`The server is running on port ${port}`)

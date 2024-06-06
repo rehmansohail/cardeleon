@@ -11,6 +11,9 @@
         <% blogContainer.forEach((data,index)=>{%>
             <li>
                 <a href="/blog/<%=index %>" target="_blank"><%= data.title %></a>
+                <form action="/delete/<%= index %>" method="POST" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
             </li>
             <% })  %>
     </ul>
