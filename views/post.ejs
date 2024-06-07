@@ -1,10 +1,12 @@
 <%- include("partials/header.ejs") %>
 
-<form action="/submit" method="post">
-    <input type="text" id="fname" name="fname" placeholder="Enter the title here"><br><br>
-    <textarea type="text" id="lname" name="lname" placeholder="Enter the blog here"></textarea><br><br>
-    <input type="submit" value="Submit">
-  </form>
+<div class="container is-flex is-justify-content-center is-align-items-center">
+  <form action="/submit" method="post" style="width: 100%;">
+      <input type="text" id="fname" name="fname" placeholder="Enter the title here" class="input is-primary is-large mt-5" required><br><br>
+      <textarea type="text" id="lname" name="lname" placeholder="Enter the blog here" class="textarea is-primary is-large" rows="8" required></textarea><br><br>
+      <input type="submit" value="Submit" class="mb-5 button is-medium">
+    </form>
+</div>
 
 
 <%- include("partials/footer.ejs") %>
