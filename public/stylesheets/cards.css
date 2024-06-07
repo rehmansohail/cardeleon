@@ -63,4 +63,11 @@ strong {
   margin: 10px
 }
 
+.subtitle {
+  color: initial; /* or whatever the initial color should be */
+  text-decoration: none; /* if you want to remove the underline */
+}
+.subtitle:hover {
+  color: cyan;
+}
 

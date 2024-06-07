@@ -20,11 +20,13 @@ app.get("/",(req,res)=>{
     })
 })
 
+app.get("/post",(req,res)=>{
+    res.render("post.ejs")
+})
+
 app.post("/submit",(req,res)=>{
     blogContainer.push(new blog(req.body["fname"],req.body["lname"]))
-    res.render("index.ejs",{
-        blogContainer
-    })
+    res.redirect('/');
 })
 
 app.get("/blog/:index",(req,res)=>{
