@@ -3,30 +3,32 @@
 
 
 <% if(blogContainer.length >0){ %>
-    <ul>
-        <% blogContainer.forEach((data,index)=>{%>
-            <div class="card">
-                <div class="card-content">
-                  <p class="title" style="color: black;">
-                    <%= data.title %>
-                  </p>
-                  <a href="/blog/<%=index %>" target="_blank" class="subtitle">View</a>
-                </div>
-                <footer class="card-footer">
-                  <div class="card-footer-item">
-                      <form action="/delete/<%= index %>" method="POST" style="display:inline;">
-                          <button type="submit">Delete</button>
-                      </form>
+    <div class="container">
+      <ul>
+          <% blogContainer.forEach((data,index)=>{%>
+              <div class="card column my-5" style="background-color: lightblue;">
+                  <div class="card-content">
+                    <p class="title" style="color: black;">
+                      <%= data.title %>
+                    </p>
+                    <a href="/blog/<%=index %>" target="_blank" class="subtitle">View</a>
                   </div>
-                   <div class="card-footer-item">
-                       <form action="/edit/<%= index %>" method="GET" style="display:inline;">
-                                         <button type="submit">Edit</button>
-                                         </form>
-                   </div>
-                </footer>
-              </div>
-            <% })  %>
-    </ul>
+                  <footer class="card-footer">
+                    <div class="card-footer-item">
+                        <form action="/delete/<%= index %>" method="POST" style="display:inline;">
+                            <button type="submit" class="subtitle">Delete</button>
+                        </form>
+                    </div>
+                     <div class="card-footer-item">
+                         <form action="/edit/<%= index %>" method="GET" style="display:inline;">
+                                           <button type="submit" formtarget="_blank" class="subtitle">Edit</button>
+                                           </form>
+                     </div>
+                  </footer>
+                </div>
+              <% })  %>
+      </ul>
+    </div>
     <% }else{ %>
         <h1 class="has-text-centered my-5 is-size-3">No blogs yet</h1>
    <% } %>
