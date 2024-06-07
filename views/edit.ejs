@@ -1,13 +1,14 @@
 <%- include("partials/header.ejs") %>
 
     
-    <form action="/edit/<%= index %>" method="POST">
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title" value="<%= data.title %>" required><br><br>
-        <label for="paragraph">Paragraph:</label>
-        <textarea id="paragraph" name="para" required><%= data.para %></textarea><br><br>
-        <button type="submit">Save Changes</button>
-    </form>
+    <div class="container is-flex is-justify-content-center is-align-items-center">
+        <form action="/edit/<%= index %>" method="POST" style="width: 100%;">
+        
+            <input type="text" id="title" name="title" value="<%= data.title %>" required class="input is-primary is-large mt-5"><br><br>
+            <textarea id="paragraph" name="para" required class="textarea is-primary is-large" rows="8"><%= data.para %></textarea><br><br>
+            <button type="submit" class="mb-5 button is-medium">Save Changes</button>
+        </form>
+    </div>
     
 
  <%- include("partials/footer.ejs") %>

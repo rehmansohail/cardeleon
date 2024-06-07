@@ -11,17 +11,17 @@
                     <p class="title" style="color: black;">
                       <%= data.title %>
                     </p>
-                    <a href="/blog/<%=index %>" target="_blank" class="subtitle">View</a>
+                    <a href="/blog/<%=index %>" target="_blank" class="subtitle subtitle1">View</a>
                   </div>
                   <footer class="card-footer">
                     <div class="card-footer-item">
                         <form action="/delete/<%= index %>" method="POST" style="display:inline;">
-                            <button type="submit" class="subtitle">Delete</button>
+                            <button type="submit" class="subtitle subtitle1">Delete</button>
                         </form>
                     </div>
                      <div class="card-footer-item">
                          <form action="/edit/<%= index %>" method="GET" style="display:inline;">
-                                           <button type="submit" formtarget="_blank" class="subtitle">Edit</button>
+                                           <button type="submit" formtarget="_blank" class="subtitle subtitle1">Edit</button>
                                            </form>
                      </div>
                   </footer>

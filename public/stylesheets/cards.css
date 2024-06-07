@@ -63,10 +63,10 @@ strong {
   margin: 10px
 }
 
-.subtitle {
+.subtitle1 {
   color: initial; /* or whatever the initial color should be */
 }
-.subtitle:hover {
+.subtitle1:hover {
   color: cyan;
 }
 
